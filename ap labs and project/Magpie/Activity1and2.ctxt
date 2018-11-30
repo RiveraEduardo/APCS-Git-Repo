@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Activity1and2
+comment0.text=\r\n\ A\ simple\ class\ to\ run\ the\ Magpie\ class.\r\n\ @author\ Laurie\ White\r\n\ @version\ April\ 2012\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment1.text=\r\n\ Create\ a\ Magpie,\ give\ it\ user\ input,\ and\ print\ its\ replies.\r\n
+comment2.params=statement\ goal\ startPos
+comment2.target=int\ findKeyword(java.lang.String,\ java.lang.String,\ int)
+numComments=3
