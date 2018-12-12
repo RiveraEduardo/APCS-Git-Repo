@@ -521,4 +521,55 @@ public class Picture extends SimplePicture
             }
         }
     }
+    public void EdgeDetection3(int edgeDist)
+    {
+        Picture copy = new Picture(this);
+        Pixel leftPixel = null;
+        Pixel rightPixel = null;
+        Pixel[][] pixels = this.getPixels2D();
+        Color rightColor = null;
+
+        // compare a pixel with one to the right of it
+        for (int row = 0; row < pixels.length; row++)
+        {
+            for (int col = 0; col < pixels[0].length-1; col++)
+            {
+                leftPixel = pixels[row][col];
+                rightPixel = pixels[row][col+1];
+                rightColor = rightPixel.getColor();
+                if (leftPixel.colorDistance(rightColor) > edgeDist)
+                {
+                    leftPixel.setBlue(20);
+                    leftPixel.setRed(250);
+                    leftPixel.setGreen(2);
+                }
+                else
+                {
+                    rightPixel.setRed(10);
+                }
+            }
+        }
+
+        // now compare a pixel with the one below it
+
+        Pixel[][] copyPixels = copy.getPixels2D();
+        Pixel topPixel = null;
+        Pixel botPixel = null;
+        Color botColor = null;
+        for (int row = 0; row < copyPixels.length-1; row++)
+        {
+            for (int col = 0; col < copyPixels[0].length; col++)
+            {
+                topPixel = copyPixels[row][col];
+                botPixel = copyPixels[row+1][col];
+                botColor = botPixel.getColor();
+                if (topPixel.colorDistance(botColor) > edgeDist)
+                {
+                    pixels[row][col].setRed(19);
+                    pixels[row][col].setBlue(190);
+                    pixels[row][col].setGreen(90);
+                }
+            }
+        }
+    }
 } // this } is the end of class Picture, put all new methods before this

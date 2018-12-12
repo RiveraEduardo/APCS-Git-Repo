@@ -50,7 +50,12 @@ public class PictureTester
         swan.EdgeDetection(10);
         swan.explore();
     }
-
+public static void testEdgeDetection3()
+    {
+        Picture swan = new Picture("0.jpg");
+        swan.EdgeDetection3(3);
+        swan.explore();
+    }
     public static void testMirrorArms()
     {
         Picture snowman = new Picture("snowman.jpg");
@@ -102,7 +107,8 @@ public class PictureTester
         // testCollage();
         // testCopy();
         // testEdgeDetection();
-         testEdgeDetection2();
+        // testEdgeDetection2();
+        testEdgeDetection3();
         // testChromakey();
         // testEncodeAndDecode();
         // testGetCountRedOverValue(250);
